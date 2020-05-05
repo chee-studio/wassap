@@ -16,7 +16,7 @@
           v-model="model"
           :items="items"
           :loading="isLoading"
-          :search-input.sync="search"
+          :search-input.sync="keyword"
           color="white"
           hide-no-data
           hide-selected
@@ -26,21 +26,35 @@
           placeholder="Start typing to Search"
           prepend-icon="mdi-database-search"
           return-object
+          @change="change"
+          @keyup.enter="change"
         ></v-autocomplete>
       </v-card-text>
     </v-card>
+    <WineList :keyword="searchedKeyword" />
   </v-app>
 
 </template>
 
 <script>
+  import WineList from "../components/WineList";
+  import ServerConfig from '../server.config.js'
+
   export default {
+    components: {WineList},
+    methods: {
+      change(e) {
+        // console.log(e.Description)
+        this.searchedKeyword = this.keyword
+      }
+    },
     data: () => ({
       descriptionLimit: 60,
       entries: [],
       isLoading: false,
       model: null,
-      search: null,
+      keyword: null,
+      searchedKeyword: ''
     }),
     computed: {
       fields () {
@@ -63,7 +77,7 @@
       },
     },
     watch: {
-      search (val) {
+      keyword (val) {
         // Items have already been loaded
         if (this.items.length > 0) return
         // Items have already been requested
@@ -71,7 +85,7 @@
         this.isLoading = true
         // Lazily load input items
         // fetch('https://api.publicapis.org/entries')
-        fetch('http://localhost:8080/wines')
+        fetch(`${ServerConfig.url}/wines`)
         .then(res => res.json())
         .then(res => {
           // const { count, entries } = res
