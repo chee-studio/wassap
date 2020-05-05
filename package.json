@@ -12,11 +12,11 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
+    "material-design-icons-iconfont": "^5.0.1",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
     "@mdi/font": "^5.1.45",
-    "material-design-icons-iconfont": "^5.0.1",
     "push-dir": "^0.4.1",
     "vuetify": "1.5.24"
   }
