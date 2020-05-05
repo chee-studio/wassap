@@ -1,19 +1,15 @@
 <template>
   <v-app>
     <v-card
-      color="red lighten-2"
+      color="#2d4679"
       dark
     >
-      <v-card-title class="headline red lighten-3">
-        Search for Public APIs
-      </v-card-title>
       <v-card-text>
-        Explore hundreds of free API's ready for consumption! For more information visit
         <a
           class="grey--text text--lighten-3"
-          href="https://github.com/toddmotto/public-apis"
+          href="https://cafe.naver.com/winerack24"
           target="_blank"
-        >the Github repository</a>.
+        >★와쌉★ 와인 싸게 사는 사람들</a>의 "내가 산 와인 가격 공유"의 엑셀 데이터 기반입니다.
       </v-card-text>
       <v-card-text>
         <v-autocomplete
@@ -26,37 +22,12 @@
           hide-selected
           item-text="Description"
           item-value="API"
-          label="Public APIs"
+          label="Wine label (ko, en)"
           placeholder="Start typing to Search"
           prepend-icon="mdi-database-search"
           return-object
         ></v-autocomplete>
       </v-card-text>
-      <v-divider></v-divider>
-      <v-expand-transition>
-        <v-list v-if="model" class="red lighten-3">
-          <v-list-item
-            v-for="(field, i) in fields"
-            :key="i"
-          >
-            <v-list-item-content>
-              <v-list-item-title v-text="field.value"></v-list-item-title>
-              <v-list-item-subtitle v-text="field.key"></v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-      </v-expand-transition>
-      <v-card-actions>
-        <v-spacer></v-spacer>
-        <v-btn
-          :disabled="!model"
-          color="grey darken-3"
-          @click="model = null"
-        >
-          Clear
-          <v-icon right>mdi-close-circle</v-icon>
-        </v-btn>
-      </v-card-actions>
     </v-card>
   </v-app>
 
@@ -83,9 +54,10 @@
       },
       items () {
         return this.entries.map(entry => {
-          const Description = entry.Description.length > this.descriptionLimit
-                              ? entry.Description.slice(0, this.descriptionLimit) + '...'
-                              : entry.Description
+          // const Description = entry.Description.length > this.descriptionLimit
+          //                     ? entry.Description.slice(0, this.descriptionLimit) + '...'
+          //                     : entry.Description
+          const Description = entry
           return Object.assign({}, entry, { Description })
         })
       },
@@ -98,12 +70,13 @@
         if (this.isLoading) return
         this.isLoading = true
         // Lazily load input items
-        fetch('https://api.publicapis.org/entries')
+        // fetch('https://api.publicapis.org/entries')
+        fetch('http://localhost:8080/wines')
         .then(res => res.json())
         .then(res => {
-          const { count, entries } = res
-          this.count = count
-          this.entries = entries
+          // const { count, entries } = res
+          // this.count = count
+          this.entries = res
         })
         .catch(err => {
           console.log(err)

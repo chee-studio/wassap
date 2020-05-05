@@ -7,7 +7,7 @@ export default {
   //   host: 'dodo4513.github.io/wine-lover' // default: localhost
   // },
   router: {
-    base: '/wine-lover/'
+    base: '/wine-lover'
   },
 
   /*
