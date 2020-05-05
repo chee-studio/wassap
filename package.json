@@ -1,0 +1,22 @@
+{
+  "name": "wine-lover",
+  "version": "1.0.0",
+  "description": "wine-lover&#39;s front",
+  "author": "",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@mdi/font": "^5.1.45",
+    "material-design-icons-iconfont": "^5.0.1",
+    "push-dir": "^0.4.1",
+    "vuetify": "1.5.24"
+  }
+}
