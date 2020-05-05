@@ -63,8 +63,6 @@
 </template>
 
 <script>
-  import 'vuetify/dist/vuetify.min.css'
-
   export default {
     data: () => ({
       descriptionLimit: 60,
