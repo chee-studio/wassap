@@ -9,7 +9,7 @@
           class="grey--text text--lighten-3"
           href="https://cafe.naver.com/winerack24"
           target="_blank"
-        >★와쌉★ 와인 싸게 사는 사람들</a>의 "내가 산 와인 가격 공유"의 엑셀 데이터 기반입니다.
+        >★와쌉★ 와인 싸게 사는 사람들.xlsx</a>의 "내가 산 와인 가격 공유" 엑셀 데이터 기반입니다.
       </v-card-text>
       <v-card-text>
         <v-autocomplete
