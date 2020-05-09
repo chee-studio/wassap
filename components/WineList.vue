@@ -38,7 +38,7 @@
     data: () => ({
       searchResult: [],
       headers: [
-        {text: 'no', class: 'abc', width:'1%'},
+        {text: 'no', value:'no', width:'1%', },
         {text: '와인 명', value: 'nameKo', width:'1%'},
         {text: '빈티지', value: 'vintage', width:'1%'},
         {text: '가격', value: 'price', width:'1%'},
