@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "material-design-icons-iconfont": "^5.0.1",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-analytics": "^5.22.1"
   },
   "devDependencies": {
     "@mdi/font": "^5.1.45",
