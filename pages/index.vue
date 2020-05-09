@@ -17,7 +17,7 @@
           :items="wineTitles"
           label="Wine label"
           @change="changeKeyboard()"
-          color='white'
+          color='#2d4679'
         ></v-combobox>
       </v-card-text>
     </v-card>
