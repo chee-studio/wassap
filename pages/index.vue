@@ -12,23 +12,13 @@
         >★와쌉★ 와인 싸게 사는 사람들.xlsx</a>의 "내가 산 와인 가격 공유" 엑셀 데이터 기반입니다.
       </v-card-text>
       <v-card-text>
-        <v-autocomplete
-          v-model="model"
-          :items="items"
-          :loading="isLoading"
-          :search-input.sync="keyword"
-          color="white"
-          hide-no-data
-          hide-selected
-          item-text="Description"
-          item-value="API"
-          label="Wine label (ko, en)"
-          placeholder="Start typing to Search"
-          prepend-icon="mdi-database-search"
-          return-object
-          @change="change"
-          @keyup.enter="change"
-        ></v-autocomplete>
+        <v-combobox
+          v-model="keyword"
+          :items="wineTitles"
+          label="Wine label"
+          @change="changeKeyboard()"
+          color='white'
+        ></v-combobox>
       </v-card-text>
     </v-card>
     <WineList :keyword="searchedKeyword" />
@@ -43,7 +33,7 @@
   export default {
     components: {WineList},
     methods: {
-      change(e) {
+      changeKeyboard(e) {
         // console.log(e.Description)
         this.searchedKeyword = this.keyword
       }
@@ -54,8 +44,16 @@
       isLoading: false,
       model: null,
       keyword: null,
-      searchedKeyword: ''
+      searchedKeyword: '',
+      wineTitles: []
     }),
+    mounted() {
+      fetch(`${ServerConfig.url}/wines/`)
+      .then(res => res.json())
+      .then(res => {
+        this.wineTitles = res
+      })
+    },
     computed: {
       fields () {
         if (!this.model) return []

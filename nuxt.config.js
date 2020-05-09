@@ -2,10 +2,6 @@
 export default {
   mode: 'universal',
 
-  // server: {
-  //   port: 80, // default: 3000
-  //   host: 'dodo4513.github.io/wine-lover' // default: localhost
-  // },
   router: {
     base: '/wine-lover'
   },
@@ -21,7 +17,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   /*
