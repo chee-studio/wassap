@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <div>
     <v-card
       color="#2d4679"
       dark
@@ -21,28 +21,25 @@
         ></v-combobox>
       </v-card-text>
     </v-card>
-    <WineList :keyword="searchedKeyword" />
-  </v-app>
 
+    <WineList :keyword="searchedKeyword"/>
+    <Footer/>
+  </div>
 </template>
 
 <script>
+  import Footer from '../components/Footer'
   import WineList from "../components/WineList";
   import ServerConfig from '../server.config.js'
 
   export default {
-    components: {WineList},
+    components: {WineList, Footer},
     methods: {
-      changeKeyboard(e) {
-        // console.log(e.Description)
+      changeKeyboard() {
         this.searchedKeyword = this.keyword
       }
     },
     data: () => ({
-      descriptionLimit: 60,
-      entries: [],
-      isLoading: false,
-      model: null,
       keyword: null,
       searchedKeyword: '',
       wineTitles: []
@@ -53,48 +50,6 @@
       .then(res => {
         this.wineTitles = res
       })
-    },
-    computed: {
-      fields () {
-        if (!this.model) return []
-        return Object.keys(this.model).map(key => {
-          return {
-            key,
-            value: this.model[key] || 'n/a',
-          }
-        })
-      },
-      items () {
-        return this.entries.map(entry => {
-          // const Description = entry.Description.length > this.descriptionLimit
-          //                     ? entry.Description.slice(0, this.descriptionLimit) + '...'
-          //                     : entry.Description
-          const Description = entry
-          return Object.assign({}, entry, { Description })
-        })
-      },
-    },
-    watch: {
-      keyword (val) {
-        // Items have already been loaded
-        if (this.items.length > 0) return
-        // Items have already been requested
-        if (this.isLoading) return
-        this.isLoading = true
-        // Lazily load input items
-        // fetch('https://api.publicapis.org/entries')
-        fetch(`${ServerConfig.url}/wines`)
-        .then(res => res.json())
-        .then(res => {
-          // const { count, entries } = res
-          // this.count = count
-          this.entries = res
-        })
-        .catch(err => {
-          console.log(err)
-        })
-        .finally(() => (this.isLoading = false))
-      },
-    },
+    }
   }
 </script>

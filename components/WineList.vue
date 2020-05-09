@@ -4,9 +4,9 @@
       :headers="headers"
       :items="searchResult"
       class="elevation-1"
-      :rows-per-page-items=[25,50]
+      hide-actions
     >
-      <template slot="headerCell" slot-scope="props">
+      <template slot="headerCell" slot-scope="props" style="min-height: 200px">
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
           <span v-on="on">
@@ -18,7 +18,7 @@
         </span>
         </v-tooltip>
       </template>
-      <template v-slot:items="props">
+      <template v-slot:items="props" style="min-height: 200px">
         <td >{{ props.item.index }}</td>
         <td >{{ props.item.nameKo }}</td>
         <td >{{ props.item.vintage }}</td>
