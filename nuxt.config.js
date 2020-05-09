@@ -33,13 +33,15 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@plugins/vuetify',
-    '@plugins/analytics'
+    '@plugins/vuetify'
   ],
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-165999498-1'
+    }]
   ],
   /*
   ** Nuxt.js modules
