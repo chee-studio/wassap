@@ -23,17 +23,15 @@
     </v-card>
 
     <WineList :keyword="searchedKeyword"/>
-    <Footer/>
   </div>
 </template>
 
 <script>
-  import Footer from '../components/Footer'
   import WineList from "../components/WineList";
   import ServerConfig from '../server.config.js'
 
   export default {
-    components: {WineList, Footer},
+    components: {WineList},
     methods: {
       changeKeyboard() {
         this.searchedKeyword = this.keyword
