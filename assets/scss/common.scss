@@ -1,0 +1,68 @@
+// common
+$font-color-gray: #2d2d2d;
+
+html {
+  overflow: auto !important;
+}
+
+a {
+  color: white !important;
+}
+
+.container {
+  padding: 0 !important;
+  max-width: none !important;
+}
+
+span, div {
+  //color: #202020;
+}
+
+#app {
+  background-color: #F5F5F5;
+}
+
+.wlCard {
+  margin-top: 10px;
+  border: 1px lightgray solid;
+}
+
+// WINE LIST
+.v-data-table {
+  .text-start {
+    padding: 0 2px !important;
+    padding-bottom: 5px !important;
+    padding-top: 5px !important;
+
+  }
+
+  td {
+    color: $font-color-gray;
+    font-size: 0.8rem !important;
+  }
+}
+#wineList {
+  box-shadow: unset !important;
+}
+
+// KEYWORDS Box
+.v-tabs {
+  height: 40px;
+  margin-bottom: 7px;
+}
+
+.v-tabs-items {
+  .v-list-item {
+    height: 35px;
+    border-top: 1px solid #e4e4e4;
+  }
+
+  .v-list-item__title {
+    color: $font-color-gray;
+    font-size: 0.9rem;
+  }
+  .v-list-item__subtitle {
+    font-size: 0.75rem;
+    padding-top: 3px;
+  }
+}
