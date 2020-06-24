@@ -13,9 +13,9 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
-      { hid: `og:title`, property: 'og:title', content: `Wassap - 와인 가격 공유 사이트!` },
-      { hid: `og:image`, property: 'og:image', content: `https://wassap.co/wassap_mobile.png` },
-      { hid: `og:description`, property: 'og:description', content: '설명 모라하지..' }
+      { hid: `og:title`, name: 'og:title', content: `Wassap - 와인 가격 공유 사이트!` },
+      { hid: `og:image`, name: 'og:image', content: `https://wassap.co/wassap_mobile.png` },
+      { hid: `og:description`, name: 'og:description', content: '설명 모라하지..' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
