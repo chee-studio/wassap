@@ -20,7 +20,6 @@
 
 <style>
   /*sunflower font*/
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&family=Sunflower:wght@300&display=swap');
   html, body {
     font-family: 'Noto Sans KR', sans-serif;
   }

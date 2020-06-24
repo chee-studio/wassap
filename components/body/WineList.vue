@@ -61,10 +61,10 @@
         let that = this
 
         return {
-          avg: (wines.reduce((a, b) => a + b.price.replace(',', '') * 1, 0) / wines.length).toString()
-                                                                                           .replace(
-                                                                                             /\B(?=(\d{3})+(?!\d))/g,
-                                                                                             ","),
+          avg: (Math.floor(wines.reduce((a, b) => a + b.price.replace(',', '') * 1, 0) / wines.length)).toString()
+                                                                                                       .replace(
+                                                                                                         /\B(?=(\d{3})+(?!\d))/g,
+                                                                                                         ","),
           mid: wines.sort((a, b) => a.price.replace(',', '') * 1 - b.price.replace(',', '') * 1)[wines.length / 2].price
         }
       },
