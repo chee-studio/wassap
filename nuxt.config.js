@@ -7,15 +7,15 @@ export default {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    titleTemplate: '%s - ' + process.env.npm_package_name + 'ㅇㅇㅇ',
+    title: process.env.npm_package_name + 'ㅃㅂ' || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
-      { hid: `og:title`, name: 'og:title', content: `Wassap - 와인 가격 공유 사이트!` },
-      { hid: `og:image`, name: 'og:image', content: `https://wassap.co/wassap_mobile.png` },
-      { hid: `og:description`, name: 'og:description', content: '설명 모라하지..' }
+      { hid: 'og:title', name: 'og:title', content: 'Wassap - 와인 가격 공유 사이트!' },
+      { hid: 'og:image', name: 'og:image', content: 'https://wassap.co/wassap_mobile.png' },
+      { hid: 'og:description', name: 'og:description', content: '설명 모라하지..' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
