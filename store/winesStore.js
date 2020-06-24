@@ -9,8 +9,12 @@ export const state = () => ({
 export const mutations = {
   setWine(state, wines) {
     console.log("store setWine")
+    console.log(wines)
     wines.sort((a, b) => new Date(b.purchaseDate) - new Date(a.purchaseDate));
-    wines.map((value, index) => value.no = index + 1)
+    wines.map((value, index) => {
+      value.no = index + 1
+      value.price = value.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    })
     Vue.set(state, 'wineList', wines);
   },
   setKeyword(state, keyword) {

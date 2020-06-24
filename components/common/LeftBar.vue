@@ -47,7 +47,7 @@
             <v-icon class="LeftBarIcon">mdi-drag-horizontal-variant</v-icon>
           </v-list-item-icon>
           <v-list-item-content style="padding-top: 12px;">
-            <v-list-item-title>★와쌉★ 와인 가격 공유 등록</v-list-item-title>
+            <v-list-item-title>와인 가격 공유 하기</v-list-item-title>
 <!--            <v-list-item-subtitle>바로가기</v-list-item-subtitle>-->
           </v-list-item-content>
         </v-list-item>

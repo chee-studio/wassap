@@ -3,6 +3,7 @@
     <v-tabs
       v-model="tab"
       fixed-tabs
+      color="#2c4679"
     >
       <v-tab>즐겨찾기</v-tab>
       <v-tab>최근 검색어</v-tab>

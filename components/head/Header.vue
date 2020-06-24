@@ -14,7 +14,7 @@
 
 <style>
   #appBar > div {
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #e4e4e4;
   }
 </style>
 <script>
