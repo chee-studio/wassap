@@ -1,9 +1,9 @@
 {
-  "name": "wine-lover",
+  "name": "wassap",
   "version": "1.0.0",
-  "description": "wine-lover&#39;s front",
-  "author": "",
-  "private": true,
+  "description": "와인 가격 공유 사이트",
+  "author": "dodo45133@gamail.com",
+  "private": false,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
