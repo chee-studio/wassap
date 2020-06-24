@@ -51,8 +51,17 @@ export default {
   */
   modules: [
     'cookie-universal-nuxt',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    'nuxt-seo'
   ],
+  seo: {
+    // Module options
+    name: 'Wassap',
+    title: '<title default>',
+    templateTitle: '%name% - %title%',
+    description: '<description default> dd',
+    image: 'https://wassap.co/wassap_mobile.png'
+  },
 
   styleResources: {
     scss: ['./assets/scss/*.scss']
