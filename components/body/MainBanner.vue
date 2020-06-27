@@ -18,9 +18,6 @@
           {
             src: 'https://wassap.co/resources/wassap_mobile.png',
           },
-          {
-            src: 'https://wassap.co/resources/main-banner/food.jpg',
-          },
         ],
       }
     },
