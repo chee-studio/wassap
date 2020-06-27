@@ -8,7 +8,6 @@
   import WineList from "../components/body/WineList";
 
   export default {
-    layout: 'new/default',
     components: {WineList},
     transition(to, from) {
       if (to.name === 'search') {
