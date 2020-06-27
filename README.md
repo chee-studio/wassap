@@ -1,22 +1,14 @@
 # wine-lover
 
-> wine-lover&#39;s front
+1. 검색어 자동완성
+2. 보다 발전된 와인 검색
+3. 즐겨찾기 & 최근 검색어
 
-## Build Setup
+# 이슈
+Q. 와인이름이 다 제각각이에요
+Q. 와인 등록이 불편해요
 
-```bash
-# install dependencies
-$ npm install
 
-# serve with hot reload at localhost:3000
-$ npm run dev
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+ 
 
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
