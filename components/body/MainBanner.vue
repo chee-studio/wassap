@@ -4,7 +4,9 @@
       v-for="(item,i) in items"
       :key="i"
       :src='item.src'
-    ></v-carousel-item>
+    >
+      <div>와인 구매 사이트</div>
+    </v-carousel-item>
   </v-carousel>
 </template>
 
@@ -17,13 +19,10 @@
             src: 'https://wassap.co/resources/wassap_mobile.png',
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+            src: 'https://wassap.co/resources/main-banner/wassap_banner.png',
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+            src: 'https://wassap.co/resources/main-banner/wine-glasses.jpg',
           },
         ],
       }
