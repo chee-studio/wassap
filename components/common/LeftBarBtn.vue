@@ -17,7 +17,6 @@
     },
     methods: {
       clickHeadIcon() {
-        console.log()
         if (this.$route.path !== "/search") {
           this.$store.commit('leftBarStore/setDrawer', !this.$store.state.leftBarStore.drawer)
         } else {

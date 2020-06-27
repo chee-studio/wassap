@@ -18,6 +18,7 @@
         @click:append-outer="searchWine"
         @keyup.enter="pressEnter"
         @keydown.enter="searchWine"
+        clearable
       />
     </nuxt-link>
   </div>
@@ -31,15 +32,12 @@
       entries: [],
       isLoading: false,
       model: null,
-      // keyword: null,
       wineTitles: []
     }),
 
     computed: {
       items() {
-        console.log('items')
         return this.wineTitles
-
       },
       keyword: {
         get() {
@@ -47,7 +45,6 @@
           // return '1'
         },
         set(value) {
-          console.log('searchbox computed keyword set.')
           this.$store.commit('winesStore/setKeyword', value);
         },
       },
@@ -71,7 +68,7 @@
 
         this.$store.dispatch('cookieKeywordsStore/addKeyword', {key: 'resentSearchedKeywords', keyword})
         this.$store.dispatch('winesStore/searchWine', keyword)
-        this.$router.replace({name: "search", query: {keyword: keyword}})
+        this.$router.replace({name: "search", query: {keyword: keyword}}, () => {})
       },
     },
 
@@ -92,7 +89,6 @@
         fetch(`${ServerConfig.url}/wines/`)
         .then(res => res.json())
         .then(res => {
-          // console.log(res)
           this.wineTitles = res
         })
         .catch(err => {

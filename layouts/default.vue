@@ -1,8 +1,20 @@
 <template>
   <v-app id="app">
     <Header/>
-    <nuxt />
+    <nuxt/>
     <LeftBar/>
+
+    <template>
+      <v-footer
+        absolute
+      >
+        <v-spacer></v-spacer>
+        <div style="font-size: 0.4rem;color: gray;">
+          Wassap served with <span style="color: red">❤</span> by CheeStudio &copy; {{ new Date().getFullYear() }} Wassap
+        </div>
+      </v-footer>
+    </template>
+
   </v-app>
 </template>
 
@@ -23,6 +35,7 @@
   html, body {
     font-family: 'Noto Sans KR', sans-serif;
   }
+
   #app {
     font-family: 'Noto Sans KR', sans-serif;
   }

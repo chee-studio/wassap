@@ -35,7 +35,7 @@
             <v-icon class="LeftBarIcon">mdi-drag-horizontal-variant</v-icon>
           </v-list-item-icon>
           <v-list-item-content style="padding-top: 12px;">
-            <v-list-item-title>XXX 공지사항</v-list-item-title>
+            <v-list-item-title>공지사항</v-list-item-title>
 <!--            <v-list-item-subtitle>바로가기</v-list-item-subtitle>-->
           </v-list-item-content>
         </v-list-item>

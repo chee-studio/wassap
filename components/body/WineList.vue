@@ -1,5 +1,5 @@
 <template>
-  <div class="wlCard">
+  <div style="margin-top: 10px">
     <v-alert
       type="info"
       icon="mdi-firework"
@@ -8,7 +8,7 @@
       color="#2c4679"
       border="left"
       v-show="searchResult.length > 0"
-      style="font-size: 0.9rem"
+      style="font-size: 0.9rem; margin-bottom: 10px"
     >
       총 {{searchResult.length}} 건의 구매 내역을 찾았어요!
 
@@ -32,13 +32,12 @@
       :sort-by="['purchaseDate']"
       :sort-desc="[true]"
       no-data-text="와인 검색 결과가 없습니다."
-      style="border-top: 1px solid #e4e4e4"
+      style="border: 1px solid #e4e4e4; margin-bottom: 50px"
     ></v-data-table>
   </div>
 </template>
 
 <script>
-
   export default {
     data: () => ({
       headers: [
@@ -54,18 +53,23 @@
         return this.$store.state.winesStore.wineList
       },
       calculatedAmount() {
-        if (this.$store.state.winesStore.wineList.length === 0) {
+        let wineList = this.$store.state.winesStore.wineList
+        if (wineList.length === 0) {
           return {avg: 0, mid: 0}
         }
+        if (wineList.length === 1) {
+          return {avg: wineList[0].price, mid: wineList[0].price}
+        }
+
+
         let wines = [...this.$store.state.winesStore.wineList]
-        let that = this
 
         return {
           avg: (Math.floor(wines.reduce((a, b) => a + b.price.replace(',', '') * 1, 0) / wines.length)).toString()
                                                                                                        .replace(
                                                                                                          /\B(?=(\d{3})+(?!\d))/g,
                                                                                                          ","),
-          mid: wines.sort((a, b) => a.price.replace(',', '') * 1 - b.price.replace(',', '') * 1)[wines.length / 2].price
+          mid: wines.sort((a, b) => a.price.replace(',', '') * 1 - b.price.replace(',', '') * 1)[Math.floor(wines.length/2)].price
         }
       },
     },
@@ -75,7 +79,6 @@
         .then(res => res.json())
         .then(res => {
           this.searchResult = res
-          console.log(res)
         })
         .catch(err => {
           console.log(err)
@@ -84,4 +87,3 @@
     }
   }
 </script>
-

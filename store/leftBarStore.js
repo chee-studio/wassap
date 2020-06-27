@@ -6,7 +6,6 @@ export const state = () => ({
 
 export const mutations = {
   setDrawer(state, value) {
-    console.log("store setDrawer")
     Vue.set(state, 'drawer', value);
   }
 }

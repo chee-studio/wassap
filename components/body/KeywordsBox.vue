@@ -7,7 +7,6 @@
     >
       <v-tab>즐겨찾기</v-tab>
       <v-tab>최근 검색어</v-tab>
-
     </v-tabs>
 
     <v-tabs-items v-model="tab">
@@ -37,6 +36,17 @@
         </v-list>
       </v-tab-item>
     </v-tabs-items>
+
+
+    <div class="emptyKeywordMessage" v-show="items[0].content.length === 0 && tab === 0 ">
+      아직 즐겨찾기로 등록한 와인이 없으시군요? <br/>
+      검색 후 <v-icon style="color: #2c4679;font-size: 1.1rem;">mdi-heart</v-icon> 를 눌러 등록해보세요!
+    </div>
+
+    <div class="emptyKeywordMessage" style="background-color: white" v-show="items[1].content.length === 0 && tab === 1">
+      최근 검색어가 없어요.
+    </div>
+
   </div>
 
 </template>
@@ -79,3 +89,13 @@
     }
   }
 </script>
+
+<style scoped lang="scss">
+  .emptyKeywordMessage {
+    background-color: white;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 10px 10px 20px;
+    color: $font-color-gray;
+  }
+</style>
