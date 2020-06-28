@@ -7,13 +7,13 @@ export default {
   ** Headers of the page
   */
   head: {
-    titleTemplate: 'Wassap',
-    title: 'Wassap',
+    titleTemplate: 'WASSAP',
+    title: 'WASSAP',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
-      { hid: 'og:title', name: 'og:title', content: 'Wassap.co - 와인 가격 검색 사이트' },
+      { hid: 'og:title', name: 'og:title', content: 'wassap.co - 와인 가격 검색 사이트' },
       { hid: 'og:image', name: 'og:image', content: 'https://wassap.co/resources/wassap_mobile.png' },
       { hid: 'og:description', name: 'og:description', content: '우리가 만들어가는 것이, 우리의 기준이 됩니다.' }
     ],
