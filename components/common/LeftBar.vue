@@ -29,7 +29,7 @@
 
       <v-divider></v-divider>
 
-      <a href="https://cafe.naver.com/winerack24/42832">
+      <a href="https://cafe.naver.com/ArticleList.nhn?search.clubid=20564405&search.menuid=137&search.boardtype=L#">
         <v-list-item>
           <v-list-item-icon>
             <v-icon class="LeftBarIcon">mdi-drag-horizontal-variant</v-icon>
@@ -41,13 +41,13 @@
         </v-list-item>
       </a>
 
-      <a href="https://forms.gle/feVmE9EjLLy9n7eDA">
+      <a href="https://forms.gle/obF2fYCrsNzdSEaEA">
         <v-list-item>
           <v-list-item-icon>
             <v-icon class="LeftBarIcon">mdi-drag-horizontal-variant</v-icon>
           </v-list-item-icon>
           <v-list-item-content style="padding-top: 12px;">
-            <v-list-item-title>와인 가격 공유 하기</v-list-item-title>
+            <v-list-item-title>와인 가격 입력 하기</v-list-item-title>
 <!--            <v-list-item-subtitle>바로가기</v-list-item-subtitle>-->
           </v-list-item-content>
         </v-list-item>
