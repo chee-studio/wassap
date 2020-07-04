@@ -1,6 +1,6 @@
 <template>
   <v-carousel style="margin-top: 10px"
-              height="300px"
+              height="350px"
   >
     <v-carousel-item
       v-for="(item,i) in items"
@@ -16,7 +16,7 @@
       return {
         items: [
           {
-            src: 'https://wassap.co/resources/main-banner/wassap_mobile.png',
+            src: 'https://wassap.co/resources/main-banner/wassap_mobile2.webp',
           },
         ],
       }
