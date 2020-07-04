@@ -103,7 +103,7 @@ export default {
     short_name: 'WASSAP',
     start_url: '/?state=pwa',
     display: 'standalone',
-    background_color: '#000'
+    background_color: '#fff'
   },
   workbox: {
     offline: false,
