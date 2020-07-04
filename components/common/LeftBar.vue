@@ -29,14 +29,15 @@
 
       <v-divider></v-divider>
 
-      <a :href="$device.isDesktop ? 'https://cafe.naver.com/ArticleList.nhn?search.clubid=20564405&search.menuid=137&search.boardtype=L#' : 'https://m.cafe.naver.com/ca-fe/web/cafes/20564405/menus/137'">
+      <a
+        :href="$device.isDesktop ? 'https://cafe.naver.com/ArticleList.nhn?search.clubid=20564405&search.menuid=137&search.boardtype=L#' : 'https://m.cafe.naver.com/ca-fe/web/cafes/20564405/menus/137'">
         <v-list-item>
           <v-list-item-icon>
             <v-icon class="LeftBarIcon">mdi-drag-horizontal-variant</v-icon>
           </v-list-item-icon>
           <v-list-item-content style="padding-top: 12px;">
             <v-list-item-title>공지사항</v-list-item-title>
-<!--            <v-list-item-subtitle>바로가기</v-list-item-subtitle>-->
+            <!--            <v-list-item-subtitle>바로가기</v-list-item-subtitle>-->
           </v-list-item-content>
         </v-list-item>
       </a>
@@ -48,7 +49,20 @@
           </v-list-item-icon>
           <v-list-item-content style="padding-top: 12px;">
             <v-list-item-title>와인 가격 입력하기</v-list-item-title>
-<!--            <v-list-item-subtitle>바로가기</v-list-item-subtitle>-->
+            <!--            <v-list-item-subtitle>바로가기</v-list-item-subtitle>-->
+          </v-list-item-content>
+        </v-list-item>
+      </a>
+
+      <a
+        :href="$device.isDesktop ? 'https://cafe.naver.com/winerack24?iframe_url=/MemoList.nhn%3Fsearch.clubid=20564405%26search.menuid=138%26viewType=pc#' : 'https://m.cafe.naver.com/MemoList.nhn?search.clubid=20564405&search.menuid=138'">
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon class="LeftBarIcon">mdi-drag-horizontal-variant</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content style="padding-top: 12px;">
+            <v-list-item-title>의견&불편사항 접수하기</v-list-item-title>
+<!--            <v-list-item-subtitle>얼른 만</v-list-item-subtitle>-->
           </v-list-item-content>
         </v-list-item>
       </a>

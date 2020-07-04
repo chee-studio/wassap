@@ -59,7 +59,6 @@
           return {avg: wineList[0].price, mid: wineList[0].price}
         }
 
-
         let wines = [...this.$store.state.winesStore.wineList]
 
         return {
