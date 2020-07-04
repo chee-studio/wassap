@@ -26,10 +26,8 @@ export const actions = {
       resentSearchedKeywords = []
     }
 
-    // lovedKeywords.sort((a, b) => new Date(b.date) - new Date(a.date))
-    // resentSearchedKeywords.sort((a, b) => new Date(b.date) - new Date(a.date))
-    commit('setKeywords', {key: 'lovedKeywords', keywords: lovedKeywords})
-    commit('setKeywords', {key: 'resentSearchedKeywords', keywords: resentSearchedKeywords})
+    commit('setKeywords', {key: 'lovedKeywords', keywords: sort(lovedKeywords)})
+    commit('setKeywords', {key: 'resentSearchedKeywords', keywords: sort(resentSearchedKeywords)})
   },
 
   addKeyword({state, commit}, {key, keyword}) {
@@ -44,13 +42,12 @@ export const actions = {
 
     keywords = keywords.filter(c => c.keyword.trim() !== keyword.trim())
     keywords.push({keyword: keyword, date: new Date().toISOString().substring(0, 10)})
-    // keywords.sort((a, b) => new Date(b.date) - new Date(a.date))
 
-    this.$cookies.set(key, [...keywords], {
+    this.$cookies.set(key, keywords, {
       path: "/",
       maxAge: 60 * 60 * 24 * 365
     });
-    commit('setKeywords', {key: key, keywords: keywords})
+    commit('setKeywords', {key: key, keywords: sort(keywords)})
     return true
   },
 
@@ -66,5 +63,9 @@ export const actions = {
       maxAge: 60 * 60 * 24 * 365
     });
     commit('setKeywords', {key: key, keywords: keywords})
-  }
+  },
+}
+
+function sort(arrays) {
+  return [...arrays].sort((a, b) => new Date(b.date) - new Date(a.date))
 }

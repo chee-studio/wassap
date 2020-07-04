@@ -11,7 +11,7 @@
         hide-no-data
         hide-selected
         item-text="label"
-        placeholder="와인 라벨로 검색"
+        placeholder="와인 명(한글)으로 검색"
         append-outer-icon="mdi-magnify"
         return-object
         ref="autocomplete1"

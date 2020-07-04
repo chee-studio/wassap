@@ -53,7 +53,8 @@ export default {
   */
   modules: [
     'cookie-universal-nuxt',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    'nuxt-device-detect'
   ],
   styleResources: {
     scss: ['./assets/scss/*.scss']

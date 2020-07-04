@@ -11,7 +11,7 @@
       class="py-0"
     >
 
-      <a href="https://m.cafe.naver.com/winerack24">
+      <a :href="$device.isDesktop ? 'https://cafe.naver.com/winerack24' : 'https://m.cafe.naver.com/winerack24'">
         <v-list-item two-line>
           <v-list-item-avatar>
             <v-img
@@ -29,7 +29,7 @@
 
       <v-divider></v-divider>
 
-      <a href="https://cafe.naver.com/ArticleList.nhn?search.clubid=20564405&search.menuid=137&search.boardtype=L#">
+      <a :href="$device.isDesktop ? 'https://cafe.naver.com/ArticleList.nhn?search.clubid=20564405&search.menuid=137&search.boardtype=L#' : 'https://m.cafe.naver.com/ca-fe/web/cafes/20564405/menus/137'">
         <v-list-item>
           <v-list-item-icon>
             <v-icon class="LeftBarIcon">mdi-drag-horizontal-variant</v-icon>
@@ -47,7 +47,7 @@
             <v-icon class="LeftBarIcon">mdi-drag-horizontal-variant</v-icon>
           </v-list-item-icon>
           <v-list-item-content style="padding-top: 12px;">
-            <v-list-item-title>와인 가격 입력 하기</v-list-item-title>
+            <v-list-item-title>와인 가격 입력하기</v-list-item-title>
 <!--            <v-list-item-subtitle>바로가기</v-list-item-subtitle>-->
           </v-list-item-content>
         </v-list-item>
