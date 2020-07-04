@@ -20,8 +20,6 @@ export const mutations = {
     Vue.set(state, 'keyword', keyword);
   },
   setCounts(state, counts) {
-    console.log(counts)
-
     Vue.set(state, 'counts', {
       allCount: counts.allCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
       yesterdayCount: counts.yesterdayCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
