@@ -3,7 +3,8 @@ import Vue from 'vue'
 
 export const state = () => ({
   keyword: '',
-  wineList: []
+  wineList: [],
+  counts: []
 })
 
 export const mutations = {
@@ -17,6 +18,9 @@ export const mutations = {
   },
   setKeyword(state, keyword) {
     Vue.set(state, 'keyword', keyword);
+  },
+  setCounts(state, count) {
+    Vue.set(state, 'counts', count);
   }
 }
 export const actions = {
@@ -29,9 +33,16 @@ export const actions = {
     fetch(`${ServerConfig.url}/wines/${keyword}`)
     .then(res => res.json())
     .then(res => {
-      this.keyword
       commit('setKeyword', keyword)
       commit('setWine', res)
+    })
+  },
+
+  getCount({state, commit}, keyword) {
+    fetch(`${ServerConfig.url}/wines/count`)
+    .then(res => res.json())
+    .then(res => {
+      commit('setCounts', res)
     })
   }
 }

@@ -1,8 +1,15 @@
 // common
 $font-color-gray: #2d2d2d;
+$trade-blue: #2c4679;
 
-html {
+html, body {
+  font-family: 'Noto Sans KR', sans-serif;
   overflow: auto !important;
+}
+
+#app {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #F5F5F5;
 }
 
 a {
@@ -12,14 +19,6 @@ a {
 .container {
   padding: 0 !important;
   max-width: none !important;
-}
-
-span, div {
-  //color: #202020;
-}
-
-#app {
-  background-color: #F5F5F5;
 }
 
 .wlCard {

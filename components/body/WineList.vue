@@ -15,8 +15,6 @@
       <div style="font-size: 0.7rem;color: lightblue;">
         평균 가격은 {{calculatedAmount.avg}}원 중간 가격은 {{calculatedAmount.mid}}원 이에요.
       </div>
-
-
     </v-alert>
 
     <v-data-table
@@ -44,8 +42,8 @@
         {text: '', value: 'no', width: '40px', 'font-size': '100px', 'fontSize': '100px', 'class': '111'},
         {text: '와인 명', value: 'name', width: '130px'},
         {text: '가격', value: 'price', width: '50px'},
-        {text: '구매일', value: 'purchaseDate', width: '70px'},
-        {text: '구매처', value: 'purchasePlace', width: '100px'}
+        {text: '확인일', value: 'purchaseDate', width: '70px'},
+        {text: '확인처', value: 'purchasePlace', width: '100px'}
       ],
     }),
     computed: {

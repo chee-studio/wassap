@@ -17,7 +17,7 @@
     },
     methods: {
       clickHeadIcon() {
-        if (this.$route.path !== "/search") {
+        if (this.$route.path.indexOf('search') === -1) {
           this.$store.commit('leftBarStore/setDrawer', !this.$store.state.leftBarStore.drawer)
         } else {
           this.$router.replace("/")
@@ -26,11 +26,11 @@
     },
     watch: {
       '$route.path': function (e) {
-        this.isNotSearch = e !== "/search";
+        this.isNotSearch = e.indexOf('search') === -1;
       }
     },
     mounted() {
-      this.isNotSearch = this.$route.path !== "/search";
+      this.isNotSearch = this.$route.path.indexOf('search') === -1;
     }
   }
 </script>
