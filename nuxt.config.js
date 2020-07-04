@@ -4,44 +4,44 @@ export default {
   mode: 'universal',
 
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     titleTemplate: 'WASSAP',
     title: 'WASSAP',
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
-      { hid: 'og:title', name: 'og:title', content: 'WASSAP - 와인 가격 검색 사이트' },
-      { hid: 'og:image', name: 'og:image', content: 'https://wassap.co/resources/wassap_mobile.png' },
-      { hid: 'og:description', name: 'og:description', content: '우리가 만들어가는 것이, 우리의 기준이 됩니다.' }
+      {charset: 'utf-8'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {hid: 'description', name: 'description', content: process.env.npm_package_description || ''},
+      {hid: 'og:title', name: 'og:title', content: 'WASSAP - 와인 가격 검색 사이트'},
+      {hid: 'og:image', name: 'og:image', content: 'https://wassap.co/resources/wassap_mobile.png'},
+      {hid: 'og:description', name: 'og:description', content: '우리가 만들어가는 것이, 우리의 기준이 됩니다.'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
-      { rel: 'stylesheet', href: '//fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap'}
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.png'},
+      {rel: 'stylesheet', href: '//fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap'}
     ]
   },
   /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
+   ** Customize the progress-bar color
+   */
+  loading: {color: '#fff'},
   /*
-  ** Global CSS
-  */
+   ** Global CSS
+   */
   css: [
     '~assets/scss/animation.scss',
     '~assets/scss/common.scss'
   ],
   /*
-  ** Plugins to load before mounting the App
-  */
+   ** Plugins to load before mounting the App
+   */
   plugins: [
     // '@plugins/vuetify'
   ],
   /*
-  ** Nuxt.js dev-modules
-  */
+   ** Nuxt.js dev-modules
+   */
   buildModules: [
     '@nuxtjs/google-analytics', '@nuxtjs/vuetify'
   ],
@@ -49,20 +49,21 @@ export default {
     id: 'UA-165999498-1'
   },
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
     'cookie-universal-nuxt',
     '@nuxtjs/style-resources',
-    'nuxt-device-detect'
+    'nuxt-device-detect',
+    '@nuxtjs/pwa'
   ],
   styleResources: {
     scss: ['./assets/scss/*.scss']
   },
   /*
-  ** vuetify module configuration
-  ** https://github.com/nuxt-community/vuetify-module
-  */
+   ** vuetify module configuration
+   ** https://github.com/nuxt-community/vuetify-module
+   */
   vuetify: {
     theme: {
       dark: false,
@@ -79,17 +80,39 @@ export default {
       }
     },
     icons: {
-        iconfont: 'md',
-      },
+      iconfont: 'md',
+    },
   },
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {
     }
-  }
+  },
+
+  /*
+   ** PWA
+   */
+
+  manifest: {
+    name: 'WASSAP',
+    short_name: 'WASSAP',
+    start_url: '/?state=pwa',
+    display: 'standalone',
+    background_color: '#000'
+  },
+  workbox: {
+    offline: false,
+    runtimeCaching: [
+      {
+        urlPattern: "/*",
+        handler: "networkFirst",
+        method: "GET"
+      }
+    ]
+  },
 }
