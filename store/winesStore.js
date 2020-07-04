@@ -4,7 +4,7 @@ import Vue from 'vue'
 export const state = () => ({
   keyword: '',
   wineList: [],
-  counts: []
+  counts: {}
 })
 
 export const mutations = {
@@ -19,8 +19,14 @@ export const mutations = {
   setKeyword(state, keyword) {
     Vue.set(state, 'keyword', keyword);
   },
-  setCounts(state, count) {
-    Vue.set(state, 'counts', count);
+  setCounts(state, counts) {
+    console.log(counts)
+
+    Vue.set(state, 'counts', {
+      allCount: counts.allCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      yesterdayCount: counts.yesterdayCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      todayCount: counts.todayCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    });
   }
 }
 export const actions = {

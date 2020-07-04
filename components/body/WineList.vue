@@ -2,7 +2,7 @@
   <div style="margin-top: 10px">
     <v-alert
       type="info"
-      icon="mdi-firework"
+      icon="mdi-pig"
       dense
       tile
       color="#2c4679"
@@ -10,8 +10,7 @@
       v-show="searchResult.length > 0"
       style="font-size: 0.9rem; margin-bottom: 10px"
     >
-      총 {{searchResult.length}} 건의 구매 내역을 찾았어요!
-
+      총 {{searchResult.length}} 건의 가격 정보를 찾았어요!
       <div style="font-size: 0.7rem;color: lightblue;">
         평균 가격은 {{calculatedAmount.avg}}원 중간 가격은 {{calculatedAmount.mid}}원 이에요.
       </div>
