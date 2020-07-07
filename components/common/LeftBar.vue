@@ -11,8 +11,7 @@
       class="py-0"
     >
 
-      <a :href=cafeUrl>
-        <v-list-item two-line>
+        <v-list-item :href=cafeUrl target="_blank" two-line>
           <v-list-item-avatar>
             <v-img
               width="30px"
@@ -25,13 +24,10 @@
             <v-list-item-subtitle>바로가기</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
-      </a>
 
       <v-divider></v-divider>
 
-      <a
-        :href=noticeUrl>
-        <v-list-item>
+        <v-list-item :href=noticeUrl target="_blank">
           <v-list-item-icon>
             <v-icon class="LeftBarIcon">mdi-drag-horizontal-variant</v-icon>
           </v-list-item-icon>
@@ -40,10 +36,8 @@
             <!--            <v-list-item-subtitle>바로가기</v-list-item-subtitle>-->
           </v-list-item-content>
         </v-list-item>
-      </a>
 
-      <a href="https://forms.gle/obF2fYCrsNzdSEaEA">
-        <v-list-item>
+        <v-list-item href="https://forms.gle/obF2fYCrsNzdSEaEA" target="_blank">
           <v-list-item-icon>
             <v-icon class="LeftBarIcon">mdi-drag-horizontal-variant</v-icon>
           </v-list-item-icon>
@@ -52,11 +46,8 @@
             <!--            <v-list-item-subtitle>바로가기</v-list-item-subtitle>-->
           </v-list-item-content>
         </v-list-item>
-      </a>
 
-      <a
-        :href=opinionUrl>
-        <v-list-item>
+      <v-list-item :href=opinionUrl target="_blank">
           <v-list-item-icon>
             <v-icon class="LeftBarIcon">mdi-drag-horizontal-variant</v-icon>
           </v-list-item-icon>
@@ -64,8 +55,7 @@
             <v-list-item-title>의견&불편사항 접수하기</v-list-item-title>
             <!--            <v-list-item-subtitle>얼른 만</v-list-item-subtitle>-->
           </v-list-item-content>
-        </v-list-item>
-      </a>
+      </v-list-item>
 
     </v-list>
   </v-navigation-drawer>
@@ -85,16 +75,16 @@
         }
       },
       noticeUrl() {
-        // return this.$device.isDesktop ? 'https://cafe.naver.com/ArticleList.nhn?search.clubid=20564405&search.menuid=137&search.boardtype=L#' : 'https://m.cafe.naver.com/ca-fe/web/cafes/20564405/menus/137'
-        return 'https://m.cafe.naver.com/ca-fe/web/cafes/20564405/menus/137'
+        return this.$device.isDesktop ? 'https://cafe.naver.com/ArticleList.nhn?search.clubid=20564405&search.menuid=137&search.boardtype=L#' : 'https://m.cafe.naver.com/ca-fe/web/cafes/20564405/menus/137'
+        // return 'https://m.cafe.naver.com/ca-fe/web/cafes/20564405/menus/137'
       },
       cafeUrl() {
-        // return this.$device.isDesktop ? 'https://cafe.naver.com/winerack24' : 'https://m.cafe.naver.com/winerack24'
-        return 'https://m.cafe.naver.com/winerack24'
+        return this.$device.isDesktop ? 'https://cafe.naver.com/winerack24' : 'https://m.cafe.naver.com/winerack24'
+        // return 'https://m.cafe.naver.com/winerack24'
       },
       opinionUrl() {
-        // return this.$device.isDesktop ? 'https://cafe.naver.com/winerack24?iframe_url=/MemoList.nhn%3Fsearch.clubid=20564405%26search.menuid=138%26viewType=pc#' : 'https://m.cafe.naver.com/MemoList.nhn?search.clubid=20564405&search.menuid=138';
-        return 'https://m.cafe.naver.com/MemoList.nhn?search.clubid=20564405&search.menuid=138'
+        return this.$device.isDesktop ? 'https://cafe.naver.com/winerack24?iframe_url=/MemoList.nhn%3Fsearch.clubid=20564405%26search.menuid=138%26viewType=pc#' : 'https://m.cafe.naver.com/MemoList.nhn?search.clubid=20564405&search.menuid=138';
+        // return 'https://m.cafe.naver.com/MemoList.nhn?search.clubid=20564405&search.menuid=138'
       }
     },
   }
