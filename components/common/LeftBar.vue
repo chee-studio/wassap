@@ -11,7 +11,7 @@
       class="py-0"
     >
 
-      <a :href="$device.isDesktop ? 'https://cafe.naver.com/winerack24' : 'https://m.cafe.naver.com/winerack24'">
+      <a :href=cafeUrl>
         <v-list-item two-line>
           <v-list-item-avatar>
             <v-img
@@ -30,7 +30,7 @@
       <v-divider></v-divider>
 
       <a
-        :href="$device.isDesktop ? 'https://cafe.naver.com/ArticleList.nhn?search.clubid=20564405&search.menuid=137&search.boardtype=L#' : 'https://m.cafe.naver.com/ca-fe/web/cafes/20564405/menus/137'">
+        :href=noticeUrl>
         <v-list-item>
           <v-list-item-icon>
             <v-icon class="LeftBarIcon">mdi-drag-horizontal-variant</v-icon>
@@ -55,7 +55,7 @@
       </a>
 
       <a
-        :href="$device.isDesktop ? 'https://cafe.naver.com/winerack24?iframe_url=/MemoList.nhn%3Fsearch.clubid=20564405%26search.menuid=138%26viewType=pc#' : 'https://m.cafe.naver.com/MemoList.nhn?search.clubid=20564405&search.menuid=138'">
+        :href=opinionUrl>
         <v-list-item>
           <v-list-item-icon>
             <v-icon class="LeftBarIcon">mdi-drag-horizontal-variant</v-icon>
@@ -83,6 +83,15 @@
         set(value) {
           this.$store.commit('leftBarStore/setDrawer', value)
         }
+      },
+      noticeUrl() {
+        return this.$device.isDesktop ? 'https://cafe.naver.com/ArticleList.nhn?search.clubid=20564405&search.menuid=137&search.boardtype=L#' : 'https://m.cafe.naver.com/ca-fe/web/cafes/20564405/menus/137'
+      },
+      cafeUrl() {
+        return this.$device.isDesktop ? 'https://cafe.naver.com/winerack24' : 'https://m.cafe.naver.com/winerack24'
+      },
+      opinionUrl() {
+        return this.$device.isDesktop ? 'https://cafe.naver.com/winerack24?iframe_url=/MemoList.nhn%3Fsearch.clubid=20564405%26search.menuid=138%26viewType=pc#' : 'https://m.cafe.naver.com/MemoList.nhn?search.clubid=20564405&search.menuid=138';
       }
     },
   }
