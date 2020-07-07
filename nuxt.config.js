@@ -54,7 +54,7 @@ export default {
   modules: [
     'cookie-universal-nuxt',
     '@nuxtjs/style-resources',
-    'nuxt-device-detect',
+    '@nuxtjs/device',
     '@nuxtjs/pwa'
   ],
   styleResources: {
