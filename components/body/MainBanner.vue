@@ -1,6 +1,6 @@
 <template>
   <v-carousel style="margin-top: 10px"
-              height="170px"
+              :height=height
   >
     <v-carousel-item
       v-for="(item,i) in items"
@@ -12,14 +12,13 @@
 
 <script>
   export default {
-    data() {
-      return {
-        items: [
-          {
-            src: 'https://wassap.co/resources/main-banner/wassap_mobile.jpg',
-          },
-        ],
+    computed: {
+      items() {
+        return this.$device.isDesktop ? [{src: 'https://wassap.co/resources/main-banner/wassap_banner.png'}] : [{src: 'https://wassap.co/resources/main-banner/wassap_mobile.jpg'}]
+      },
+      height() {
+        return this.$device.isDesktop ? '350px' : '170px'
       }
-    },
+    }
   }
 </script>
