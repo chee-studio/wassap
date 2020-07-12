@@ -1,6 +1,6 @@
 <template>
   <v-carousel style="margin-top: 10px"
-              height="350px"
+              height="170px"
   >
     <v-carousel-item
       v-for="(item,i) in items"
