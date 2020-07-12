@@ -16,7 +16,7 @@
       return {
         items: [
           {
-            src: 'https://wassap.co/resources/main-banner/wassap_mobile2.webp',
+            src: 'https://wassap.co/resources/main-banner/wassap_mobile.jpg',
           },
         ],
       }
