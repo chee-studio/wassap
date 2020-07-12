@@ -22,6 +22,7 @@
     </v-alert>
 
     <KeywordsBox/>
+    <RockCurtain/>
 
   </div>
 </template>
@@ -29,9 +30,10 @@
 <script>
   import KeywordsBox from "../components/body/KeywordsBox";
   import MainBanner from "../components/body/MainBanner";
+  import RockCurtain from "../components/common/RockCurtain";
 
   export default {
-    components: {KeywordsBox, MainBanner},
+    components: {RockCurtain, KeywordsBox, MainBanner},
 
     methods: {
       getYesterday() {
@@ -60,5 +62,21 @@
         return this.$store.state.winesStore.counts.todayCount;
       }
     },
+    data() {
+      return {
+        isProgramming: true
+      }
+    },
   }
 </script>
+
+<style>
+  #screen {
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 1;
+  }
+</style>
