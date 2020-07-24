@@ -23,6 +23,7 @@
 
     <KeywordsBox/>
     <RockCurtain/>
+    <AddWineBtn/>
 
   </div>
 </template>
@@ -31,9 +32,10 @@
   import KeywordsBox from "../components/body/KeywordsBox";
   import MainBanner from "../components/body/MainBanner";
   import RockCurtain from "../components/common/RockCurtain";
+  import AddWineBtn from "../components/common/AddWineBtn";
 
   export default {
-    components: {RockCurtain, KeywordsBox, MainBanner},
+    components: {RockCurtain, KeywordsBox, MainBanner, AddWineBtn},
 
     methods: {
       getYesterday() {

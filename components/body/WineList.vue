@@ -32,23 +32,6 @@
       style="border: 1px solid #e4e4e4;"
     ></v-data-table>
 
-    <div v-if="false">
-      <v-card-text style="position: fixed; top: 90%;">
-        <v-fab-transition>
-          <v-btn
-            v-show="!hidden"
-            color="pink"
-            dark
-            absolute
-            top
-            right
-            fab
-          >
-            <v-icon>mdi-plus</v-icon>
-          </v-btn>
-        </v-fab-transition>
-      </v-card-text>
-    </div>
 
   </div>
 </template>
@@ -63,7 +46,6 @@
         {text: '확인일', value: 'purchaseDate', width: '80px'},
         {text: '확인처', value: 'purchasePlace', width: '100px'}
       ],
-      hidden: true,
     }),
     computed: {
       searchResult() {
@@ -102,9 +84,5 @@
         })
       },
     },
-    mounted() {
-      let that = this
-      setTimeout(function () {that.hidden = false}, 200)
-    }
   }
 </script>
