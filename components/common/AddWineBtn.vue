@@ -28,15 +28,16 @@
           <v-toolbar-title>와인 등록하기!</v-toolbar-title>
           <v-spacer></v-spacer>
           <v-toolbar-items>
-<!--            <v-btn dark text @click="dialog = false">Save</v-btn>-->
-            <v-btn dark text >Save</v-btn>
+            <!--            <v-btn dark text @click="dialog = false">Save</v-btn>-->
+            <v-btn dark text>Save</v-btn>
           </v-toolbar-items>
         </v-toolbar>
         <v-list three-line subheader>
           <v-subheader>공지</v-subheader>
           <v-list-item>
             <v-list-item-content>
-              <v-list-item-title>등록 및 동기화.</v-list-item-title>
+              <div style="height: 10px"/>
+              <v-list-item-title>등록 및 동기화</v-list-item-title>
               <v-list-item-subtitle>아래 양식으로 와인 정보를 등록해 주시면 10분 내에 동기화 되요.</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
@@ -52,41 +53,43 @@
           <v-subheader>와인 정보</v-subheader>
           <v-list-item>
             <v-list-item-action>
-              <div style="font-size: 2.3rem;font-weight: 100;">
+              <div class="numberTitle">
                 1
               </div>
             </v-list-item-action>
-            <v-dialog
-              ref="dialog"
-              v-model="modal"
-              :return-value.sync="wineInfo.date"
-              persistent
-              width="290px"
-            >
-              <template v-slot:activator="{ on, attrs }">
-                <v-text-field
-                  v-model="wineInfo.date"
-                  label="확인일"
-                  readonly
-                  v-bind="attrs"
-                  v-on="on"
-                ></v-text-field>
-              </template>
-              <v-date-picker v-model="wineInfo.date" scrollable
-                             color="#2c4679">
-                <v-spacer></v-spacer>
-                <v-btn text color="#2c4679" @click="modal = false">Cancel</v-btn>
-                <v-btn text color="#2c4679" @click="$refs.dialog.save(wineInfo.date)">OK</v-btn>
-              </v-date-picker>
-            </v-dialog>
+            <v-list-item-content style="margin-left: 10px">
+              <v-dialog
+                ref="dialog"
+                v-model="modal"
+                :return-value.sync="wineInfo.date"
+                persistent
+                width="290px"
+              >
+                <template v-slot:activator="{ on, attrs }">
+                  <v-text-field
+                    v-model="wineInfo.date"
+                    label="확인일"
+                    readonly
+                    v-bind="attrs"
+                    v-on="on"
+                  ></v-text-field>
+                </template>
+                <v-date-picker v-model="wineInfo.date" scrollable
+                               color="#2c4679">
+                  <v-spacer></v-spacer>
+                  <v-btn text color="#2c4679" @click="modal = false">Cancel</v-btn>
+                  <v-btn text color="#2c4679" @click="$refs.dialog.save(wineInfo.date)">OK</v-btn>
+                </v-date-picker>
+              </v-dialog>
+            </v-list-item-content>
           </v-list-item>
           <v-list-item>
             <v-list-item-action>
-              <div style="font-size: 2.3rem;font-weight: 100;">
+              <div class="numberTitle">
                 2
               </div>
             </v-list-item-action>
-            <v-list-item-content>
+            <v-list-item-content style="margin-left: 10px">
               <v-text-field
                 v-model="wineInfo.name"
                 :rules="rules.name"
@@ -99,7 +102,7 @@
           </v-list-item>
           <v-list-item>
             <v-list-item-action>
-              <div style="font-size: 2.3rem;font-weight: 100;">
+              <div class="numberTitle">
                 3
               </div>
             </v-list-item-action>
@@ -110,15 +113,19 @@
                   :items="vintages"
                   label="빈티지"
                   :disabled="wineInfo.hasVintage"
+                  color="#2c4679"
+                  style="margin-left: 10px"
                 ></v-select>
 
-                <v-switch v-model="wineInfo.hasVintage" label="빈티지 없음" style="margin-left: 10px"/>
+                <v-switch v-model="wineInfo.hasVintage"
+                          color="#2c4679"
+                          label="빈티지 없음" style="margin-left: 10px"/>
               </v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
           <v-list-item>
             <v-list-item-action>
-              <div style="font-size: 2.3rem;font-weight: 100;">
+              <div class="numberTitle">
                 4
               </div>
             </v-list-item-action>
@@ -131,6 +138,7 @@
                   label="와인 가격"
                   required
                   color="#2c4679"
+                  style="margin-left: 10px"
                 ></v-text-field>
 
               </v-list-item-subtitle>
@@ -138,15 +146,17 @@
           </v-list-item>
           <v-list-item>
             <v-list-item-action>
-              <div style="font-size: 2.3rem;font-weight: 100;">
+              <div class="numberTitle">
                 5
               </div>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>용량</v-list-item-title>
+              <v-list-item-title style="margin-left: 10px">용량</v-list-item-title>
               <v-list-item-subtitle>
 
-                <v-radio-group v-model="wineInfo.capacity" row>
+                <v-radio-group v-model="wineInfo.capacity"
+                               color="#2c4679"
+                               row style="margin-left: 10px">
                   <v-radio label="750ml" value="BOTTLE"></v-radio>
                   <v-radio label="375ml" value="HALF_BOTTLE"></v-radio>
                   <v-radio label="1500ml" value="MAGNOM"></v-radio>
@@ -157,14 +167,16 @@
           </v-list-item>
           <v-list-item>
             <v-list-item-action>
-              <div style="font-size: 2.3rem;font-weight: 100;">
+              <div class="numberTitle">
                 6
               </div>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>확인처</v-list-item-title>
+              <v-list-item-title style="margin-left: 10px">확인처</v-list-item-title>
               <v-list-item-subtitle>
-                <v-radio-group v-model="wineInfo.purchasePlace" column>
+                <v-radio-group v-model="wineInfo.purchasePlace"
+                               color="#2c4679"
+                               column style="margin-left: 10px">
                   <v-radio label="로드샵(소매 샵)" value="로드샵(소매 샵)"></v-radio>
                   <v-radio label="이마트" value="이마트"></v-radio>
                   <v-radio label="이마트 트레이더스" value="이마트 트레이더스"></v-radio>
@@ -188,15 +200,17 @@
           </v-list-item>
           <v-list-item>
             <v-list-item-action>
-              <div style="font-size: 2.3rem;font-weight: 100;">
+              <div class="numberTitle">
                 7
               </div>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>확인 지역</v-list-item-title>
+              <v-list-item-title style="margin-left: 10px">확인 지역</v-list-item-title>
               <v-list-item-subtitle>
 
-                <v-radio-group v-model="wineInfo.purchaseArea" column>
+                <v-radio-group v-model="wineInfo.purchaseArea"
+                               color="#2c4679"
+                               column style="margin-left: 10px">
                   <v-radio label="서울" value="서울"></v-radio>
                   <v-radio label="경기" value="경기"></v-radio>
                   <v-radio label="강원" value="강원"></v-radio>
@@ -226,12 +240,12 @@
           </v-list-item>
           <v-list-item>
             <v-list-item-action>
-              <div style="font-size: 2.3rem;font-weight: 100;">
+              <div class="numberTitle">
                 8
               </div>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>기타 메모(비공개 항목)</v-list-item-title>
+              <v-list-item-title style="margin-left: 10px">기타 메모(비공개 항목)</v-list-item-title>
               <v-list-item-subtitle>
 
                 <v-text-field
@@ -240,6 +254,7 @@
                   color="#2c4679"
                   :rules="rules.memo"
                   :counter="20"
+                  style="margin-left: 10px"
                 ></v-text-field>
 
               </v-list-item-subtitle>
@@ -247,14 +262,14 @@
           </v-list-item>
           <v-list-item>
             <v-list-item-action>
-              <div style="font-size: 2.3rem;font-weight: 100;">
+              <div class="numberTitle">
                 9
               </div>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>감사합니다!</v-list-item-title>
+              <v-list-item-title style="margin-left: 10px">감사합니다!</v-list-item-title>
               <v-list-item-subtitle>
-                <v-checkbox v-model="agree" label="위 내용의 공유 및 활용에 동의합니다."/>
+                <v-checkbox v-model="agree" color="#2c4679" label="위 내용의 공유 및 활용에 동의합니다." style="margin-left: 10px"/>
               </v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
@@ -326,3 +341,13 @@
     }
   }
 </script>
+
+<style scoped>
+  .numberTitle {
+    font-size: 2.3rem;
+    font-weight: 100;
+    color: gray;
+    text-align: center;
+    width: 60px;
+  }
+</style>
