@@ -12,7 +12,8 @@
     >
       총 {{searchResult.length}} 건의 가격 정보를 찾았어요!
       <div style="font-size: 0.7rem;color: lightblue;">
-        평균 가격은 <span style="color: white">{{calculatedAmount.avg}}</span>원 중간 가격은 <span style="color: white">{{calculatedAmount.mid}}</span>원 이에요.
+        평균 가격은 <span style="color: white">{{calculatedAmount.avg}}</span>원 중간 가격은 <span style="color: white">{{calculatedAmount.mid}}</span>원
+        이에요.
       </div>
     </v-alert>
 

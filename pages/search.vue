@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <wineList/>
-    <AddWineBtn/>
+<!--    <AddWineBtn/>-->
   </div>
 </template>
 
@@ -11,11 +11,11 @@
 
   export default {
     components: {WineList, AddWineBtn},
-    transition(to, from) {
-      if (to.name === 'search') {
-        return 'slide-left'
-      }
-      return 'slide-right'
-    },
+    // transition(to, from) {
+    //   if (to.name === 'search') {
+    //     return 'slide-left'
+    //   }
+    //   return 'slide-right'
+    // },
   }
 </script>

@@ -23,7 +23,8 @@
 
     <KeywordsBox/>
     <RockCurtain/>
-    <AddWineBtn/>
+
+<!--    <AddWineBtn/>-->
 
   </div>
 </template>
