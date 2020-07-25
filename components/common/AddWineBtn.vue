@@ -115,7 +115,6 @@
                 color="#2c4679"
                 style="margin-left: 10px"
               ></v-select>
-
               <v-switch v-model="wineInfo.hasVintage"
                         color="#2c4679"
                         label="빈티지 없음" style="margin-left: 10px;font-size: 0.9rem"/>
@@ -244,7 +243,7 @@
             <v-list-item-content>
               <v-text-field
                 v-model="wineInfo.memo"
-                label="기타 메모(비공개 항목)"
+                label="정확한 확인처 및 기타 메모 (선택 사항 / 비공개 항목)"
                 color="#2c4679"
                 :rules="rules.memo"
                 :counter="20"
@@ -259,7 +258,7 @@
               </div>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title style="margin-left: 10px">감사합니다!</v-list-item-title>
+              <v-list-item-title style="margin-left: 10px">와인 가격을 공유해 주셔서 감사합니다. ^^*</v-list-item-title>
                 <v-checkbox v-model="agree" color="#2c4679" label="위 내용의 공유 및 활용에 동의합니다."
                             style="margin-left: 10px;"/>
             </v-list-item-content>
@@ -284,6 +283,7 @@
             v => v.length <= 30 || '와인 명이 너무 길어요.',
           ],
           price: [
+            v => !!v || '와인 가격은 필수에요.',
             v => !isNaN(Number(v)) || '숫자로만 입력해주세요.'
           ],
           purchasePlace: [
