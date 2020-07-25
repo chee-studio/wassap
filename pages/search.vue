@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <wineList/>
-<!--    <AddWineBtn/>-->
+    <AddWineBtn/>
   </div>
 </template>
 

@@ -45,8 +45,8 @@ export const actions = {
 
     this.$cookies.set(key, keywords, {
       path: "/",
-      maxAge: 60 * 60 * 24 * 365
-    });
+      maxAge: 60 * 60 * 24 * 365,
+      });
     commit('setKeywords', {key: key, keywords: sort(keywords)})
     return true
   },
@@ -60,8 +60,8 @@ export const actions = {
     keywords = keywords.filter(c => c.keyword.trim() !== keyword.trim())
     this.$cookies.set(key, [...keywords], {
       path: "/",
-      maxAge: 60 * 60 * 24 * 365
-    });
+      maxAge: 60 * 60 * 24 * 365,
+      });
     commit('setKeywords', {key: key, keywords: keywords})
   },
 }

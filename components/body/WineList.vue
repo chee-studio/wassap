@@ -41,7 +41,7 @@
   export default {
     data: () => ({
       headers: [
-        {text: '', value: 'no', width: '40px', 'font-size': '100px', 'fontSize': '100px', 'class': '111'},
+        {text: '', value: 'no', width: '40px'},
         {text: '와인 명', value: 'name', width: '130px'},
         {text: '가격', value: 'price', width: '50px'},
         {text: '확인일', value: 'purchaseDate', width: '80px'},

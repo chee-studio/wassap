@@ -48,5 +48,15 @@ export const actions = {
     .then(res => {
       commit('setCounts', res)
     })
+  },
+
+  saveWine({state, commit}, wine) {
+    fetch(`${ServerConfig.url}/wines`, {
+      method: 'POST',
+      body: JSON.stringify(wine),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(r => console.log("success"))
   }
 }
