@@ -295,9 +295,8 @@
       <v-card>
         <v-card-title class="headline" style="color: #2c4679">저장 성공!</v-card-title>
         <v-card-text>
-          더 등록하실 와인이 있으신가요? <br/>
-          그렇다면 <kbd>확인일</kbd> <kbd>확인 지역</kbd> <kbd>확인처</kbd> <kbd>메모</kbd> <kbd>공유 여부</kbd> 를 폼에서
-          유지할게요.
+          함께 사신 와인이 더 있으신가요? <br/>
+          그렇다면 <kbd>확인일</kbd> <kbd>확인 지역</kbd> <kbd>확인처</kbd> <kbd>메모</kbd> <kbd>공유 여부</kbd> 는 지우지 않고 유지할게요.
         </v-card-text>
 
         <v-card-actions>

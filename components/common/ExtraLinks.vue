@@ -31,15 +31,15 @@
       </v-list-item-content>
     </v-list-item>
 
-    <v-list-item href="https://forms.gle/obF2fYCrsNzdSEaEA" target="_blank">
-      <v-list-item-icon>
-        <v-icon class="LeftBarIcon">mdi-drag-horizontal-variant</v-icon>
-      </v-list-item-icon>
-      <v-list-item-content style="padding-top: 12px;">
-        <v-list-item-title>와인 가격 입력하기</v-list-item-title>
-        <!--            <v-list-item-subtitle>바로가기</v-list-item-subtitle>-->
-      </v-list-item-content>
-    </v-list-item>
+<!--    <v-list-item href="https://forms.gle/obF2fYCrsNzdSEaEA" target="_blank">-->
+<!--      <v-list-item-icon>-->
+<!--        <v-icon class="LeftBarIcon">mdi-drag-horizontal-variant</v-icon>-->
+<!--      </v-list-item-icon>-->
+<!--      <v-list-item-content style="padding-top: 12px;">-->
+<!--        <v-list-item-title>와인 가격 입력하기</v-list-item-title>-->
+<!--        &lt;!&ndash;            <v-list-item-subtitle>바로가기</v-list-item-subtitle>&ndash;&gt;-->
+<!--      </v-list-item-content>-->
+<!--    </v-list-item>-->
 
     <v-list-item :href=opinionUrl target="_blank">
       <v-list-item-icon>

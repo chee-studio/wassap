@@ -21,6 +21,27 @@
 
     </v-alert>
 
+    <v-alert
+      type="info"
+      icon="mdi-creation"
+      dense
+      tile
+      color="teal darken-3"
+      border="left"
+      style="margin-bottom: 10px; margin-top: 10px;"
+    >
+      <div style="font-size: 0.9rem;">
+        와인 등록 기능 오픈!
+
+      </div>
+      <div style="font-size: 0.7rem;color: #E0F2F1;">
+        아래 쪽 하단의 핑크색 동그라미를 눌러보세요.
+
+<!--        <span style="float: right;color: #4DB6AC;font-size: 0.7rem"><v-icon size="0.9rem" color="teal lighten-2">mdi-link-variant</v-icon> 관련 글 보기</span>-->
+      </div>
+
+    </v-alert>
+
     <KeywordsBox/>
     <RockCurtain/>
 
