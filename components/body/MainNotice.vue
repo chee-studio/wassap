@@ -8,7 +8,7 @@
       color="#2c4679"
       border="left"
       style=""
-      class="abc"
+      class="alretStyle"
     >
       <div style="font-size: 0.9rem;">
         현재 총 <span style="color: white">{{allCount}}</span> 건의 와인 가격 검색이 가능해요.
@@ -28,7 +28,7 @@
         border="left"
         style="width: 100%"
         href="www.naver.com"
-        class="abc"
+        class="alretStyle"
       >
         <div style="font-size: 0.9rem;">
           와인 등록 기능 오픈!
@@ -79,9 +79,9 @@
 
 </script>
 
-<style>
-  .abc {
+<style scoped>
+  .alretStyle {
     margin-top: 10px;
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 </style>
