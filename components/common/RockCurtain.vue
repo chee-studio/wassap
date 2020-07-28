@@ -34,3 +34,14 @@
     }
   }
 </script>
+
+<style scoped>
+  #screen {
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 1;
+  }
+</style>
